@@ -18,4 +18,8 @@ public class RoomInfo {
 
     @Column
     private int humanCount;
+
+    public RoomInfo() {
+
+    }
 }

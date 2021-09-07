@@ -14,7 +14,10 @@ import javax.persistence.Id;
 public class RoomInfo {
 
     @Id
-    private int roomNumber;
+    private int robotNum;
+
+    @Column
+    private int roomNum;
 
     @Column
     private int humanCount;

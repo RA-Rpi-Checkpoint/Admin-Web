@@ -7,10 +7,11 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 public class RoomInfoForm {
-    private int roomNumber;
+    private int robotNum;
+    private int roomNum;
     private int humanCount;
 
     public RoomInfo toEntity(){
-        return new RoomInfo(roomNumber, humanCount);
+        return new RoomInfo(robotNum, roomNum, humanCount);
     }
 }

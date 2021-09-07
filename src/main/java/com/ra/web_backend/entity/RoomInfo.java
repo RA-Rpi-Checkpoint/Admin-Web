@@ -2,6 +2,7 @@ package com.ra.web_backend.entity;
 
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.ToString;
 
 import javax.persistence.Column;
@@ -11,6 +12,7 @@ import javax.persistence.Id;
 @Entity
 @AllArgsConstructor
 @ToString
+@Getter
 public class RoomInfo {
 
     @Id

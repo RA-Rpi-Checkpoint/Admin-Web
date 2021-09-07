@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
+import java.util.Optional;
 
 @Slf4j
 @RestController
@@ -36,8 +37,16 @@ public class ApiController {
     log.info(saved.toString());
 
 
+    // robot1의 정보
+    Optional<RoomInfo> robot = roomInfoRepository.findById(1);
+    System.out.println("Room Number : "+robot.get().getRoomNum());
+    System.out.println("Room Number : "+robot.get().getHumanCount());
 
-    return roomInfo;
+
+
+
+
+    return robot.get();
   }
 
 }

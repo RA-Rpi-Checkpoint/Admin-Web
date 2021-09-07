@@ -15,14 +15,14 @@ import java.util.HashMap;
 public class ApiController {
   @GetMapping("/roominfo")
   @ResponseBody
-  public HashMap<Object, Object> getRoomInfo(@RequestParam String roomNumber, String human) {
+  public HashMap<Object, Object> getRoomInfo(@RequestParam String roomNumber, String HumanCount) {
 //    System.out.println(roomNumber);
 //    System.out.println(human);
 
     HashMap<Object, Object> result = new HashMap<Object, Object>();  //리턴값
 
     result.put("roomNumber", roomNumber);
-    result.put("humanNumber", human);
+    result.put("humanNumber", HumanCount);
 //    result.put("RESULT", "성공!");
     return result;
   }

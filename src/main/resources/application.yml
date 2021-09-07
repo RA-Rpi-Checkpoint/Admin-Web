@@ -17,6 +17,8 @@ spring:
       enabled: true
     restart:
       enabled: true
-
+  h2:
+    console:
+      enabled: true
   freemarker:
     cache: false

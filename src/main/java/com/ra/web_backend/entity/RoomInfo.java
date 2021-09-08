@@ -1,6 +1,8 @@
 package com.ra.web_backend.entity;
 
 
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
@@ -13,6 +15,7 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @ToString
 @Getter
+@JsonNaming(value = PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class RoomInfo {
 
     @Id

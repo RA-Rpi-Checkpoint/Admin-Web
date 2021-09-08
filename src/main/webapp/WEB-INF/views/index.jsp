@@ -6,10 +6,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Ela Admin - HTML5 Admin Template</title>
+    <title>Embedded SW Project</title>
     <meta name="description" content="Ela Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <META HTTP-EQUIV="refresh" CONTENT="15">
     <link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
     <link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png">
 
@@ -71,7 +71,7 @@
         <header id="header" class="header">
             <div class="top-left">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="./"><img src="../../images/logo.png" alt="Logo"></a>
+                  <a class="navbar-brand" href="./"><img src="images/logo.png" alt="Logo"></a>
                     
                 </div>
             </div>
@@ -164,7 +164,7 @@
                         <div class="col-xl-8">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="box-title">Orders </h4>
+                                    <h4 class="box-title">Robot Information </h4>
                                 </div>
                                 <div class="card-body--">
                                     <div class="table-stats order-table ov-h">
@@ -185,7 +185,7 @@
                                                     <td class="serial">1.</td>
                                                     <td class="avatar">
                                                         <div class="round-img">
-                                                            <a href="#"><img class="rounded-circle" src="../../images/avatar/1.jpg" alt=""></a>
+                                                            <a href="#"><img class="rounded-circle" src="images/avatar/1.jpg" alt=""></a>
                                                         </div>
                                                     </td>
                                                     <td> #5469 </td>
@@ -193,6 +193,7 @@
                                                     <td> <span class="product">iMax</span> </td>
                                                     <td><span class="count">231</span></td>
                                                     <td>
+                                                        <span class="ml-status-circle proccessed fa"></span>
                                                         <span class="badge badge-complete">Complete</span>
                                                     </td>
                                                 </tr>
@@ -200,7 +201,7 @@
                                                     <td class="serial">2.</td>
                                                     <td class="avatar">
                                                         <div class="round-img">
-                                                            <a href="#"><img class="rounded-circle" src="../../images/avatar/2.jpg" alt=""></a>
+                                                            <a href="#"><img class="rounded-circle" src="images/avatar/2.jpg" alt=""></a>
                                                         </div>
                                                     </td>
                                                     <td> #5468 </td>
@@ -208,14 +209,14 @@
                                                     <td> <span class="product">iPad</span> </td>
                                                     <td><span class="count">250</span></td>
                                                     <td>
-                                                        <span class="badge badge-complete">Complete</span>
+                                                        <span class="ml-status-circle error fa"></span>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td class="serial">3.</td>
                                                     <td class="avatar">
                                                         <div class="round-img">
-                                                            <a href="#"><img class="rounded-circle" src="../../images/avatar/3.jpg" alt=""></a>
+                                                            <a href="#"><img class="rounded-circle" src="images/avatar/3.jpg" alt=""></a>
                                                         </div>
                                                     </td>
                                                     <td> #5467 </td>
@@ -223,14 +224,14 @@
                                                     <td> <span class="product">SSD</span> </td>
                                                     <td><span class="count">250</span></td>
                                                     <td>
-                                                        <span class="badge badge-complete">Complete</span>
+                                                        <span class="badge badge-pause">Complete</span>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td class="serial">4.</td>
                                                     <td class="avatar">
                                                         <div class="round-img">
-                                                            <a href="#"><img class="rounded-circle" src="../../images/avatar/4.jpg" alt=""></a>
+                                                            <a href="#"><img class="rounded-circle" src="images/avatar/4.jpg" alt=""></a>
                                                         </div>
                                                     </td>
                                                     <td> #5466 </td>
@@ -245,7 +246,7 @@
                                                     <td class="serial">5.</td>
                                                     <td class="avatar pb-0">
                                                         <div class="round-img">
-                                                            <a href="#"><img class="rounded-circle" src="../../images/avatar/6.jpg" alt=""></a>
+                                                            <a href="#"><img class="rounded-circle" src="images/avatar/6.jpg" alt=""></a>
                                                         </div>
                                                     </td>
                                                     <td> #5465 </td>
@@ -273,6 +274,16 @@
                                             </div>
                                         </div>
                                     </div><!-- /.card -->
+                                </div>
+                                <div class="col-lg-6 col-xl-12">
+                                    <div class="card bg-flat-color-3  ">
+                                        <div class="card-body">
+                                            <h4 class="card-title m-0  white-color ">August 2018</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <div id="flotLine5" class="flot-line"></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div> <!-- /.col-md-4 -->

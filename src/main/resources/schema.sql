@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS RPI 
+( 
+ID bigint(5) NOT NULL AUTO_INCREMENT,
+ROBOT_NUM varchar(255), 
+ROOM_NUM varchar(255), 
+HUMAN_COUNT varchar(255), 
+primary key(ID)
+);

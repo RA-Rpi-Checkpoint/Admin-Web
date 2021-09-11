@@ -2,19 +2,30 @@ package com.ra.web_backend.dto;
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
-import com.ra.web_backend.entity.RoomInfo;
-import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.springframework.stereotype.Service;
 
-@AllArgsConstructor
+@Data
+@Builder // 빌더 패턴
+@Service
 @ToString
+@NoArgsConstructor
 @JsonNaming(value = PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class RoomInfoForm {
-    private int robotNum;
-    private int roomNum;
-    private int humanCount;
 
-    public RoomInfo toEntity(){
-        return new RoomInfo(robotNum, roomNum, humanCount);
+    private Integer robotNum;
+    private Integer roomNum;
+    private Integer humanCount;
+    private Boolean status;
+
+    @Builder
+    public RoomInfoForm(Integer robotNum, Integer roomNum, Integer humanCount, Boolean status) {
+        this.robotNum = robotNum;
+        this.roomNum = roomNum;
+        this.humanCount = humanCount;
+        this.status = status;
     }
 }

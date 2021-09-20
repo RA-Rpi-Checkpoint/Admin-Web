@@ -573,6 +573,8 @@ canvas {
   .order-table tr:last-child td {
     border: none; }
   .order-table .badge {
+    width: 80px;
+    margin-left: 10px;
     color: white;
     padding: 10px;
     text-transform: uppercase;

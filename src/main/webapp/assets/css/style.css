@@ -584,7 +584,8 @@ canvas {
   .order-table .badge-pending {
     background: #fb9678; }
   .order-table .badge-pause {
-  background: #F7DA33; }
+
+  background: #D7DF01 }
 
 .messenger-box {
   padding-top: 15px; }

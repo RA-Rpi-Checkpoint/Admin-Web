@@ -20,8 +20,10 @@ import java.util.Optional;
 @JsonNaming(value = PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class RobotInfo extends BaseEntity {
     @Id
+    @Column(name = "robot_id")
     private Integer robotId;
 
+    @Column(name = "recent_room")
     private Integer recentRoom;
 
     @Enumerated(value = EnumType.STRING)

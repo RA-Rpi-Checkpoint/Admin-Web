@@ -44,7 +44,7 @@ public class ApiController {
         return result;
     }
 
-    @RequestMapping(value = "/roominfo", method = RequestMethod.GET)
+    @RequestMapping(value = "/roomcheck", method = RequestMethod.GET)
     public ResponseDto<?> updateRoomInfo(@RequestParam("robotNum") int robotNum, @RequestParam("roomNum") int roomNum, @RequestParam("humanCount") int humanCount, @RequestParam("status") RobotStatus status) throws Exception {
         ResponseDto<?> result = null;
         String data = "robotNum: " + robotNum + " roomNum: " + roomNum + " humanCount: " + humanCount + " status: " + status;

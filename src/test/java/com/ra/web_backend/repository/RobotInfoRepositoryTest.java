@@ -23,47 +23,47 @@ class RobotInfoRepositoryTest {
 
     @Test
     void test1() {
-        RobotInfo robotInfo = new RobotInfo();
-        robotInfo.setRobotId(1);
-        robotInfo.setRecentRoom(0);
-        robotInfo.setStatus(RobotStatus.RUNNING);
-        robotInfoRepository.save(robotInfo);
-
-        robotInfo.setRobotId(2);
-        robotInfo.setRecentRoom(0);
-        robotInfo.setStatus(RobotStatus.WAITING);
-        robotInfoRepository.save(robotInfo);
-
-        RoomInfo roomInfo = new RoomInfo();
-        roomInfo.setRoomId(1);
-        roomInfo.setHumanCount(0);
-        roomInfo.setStatus(RoomStatus.PENDING);
-        roomInfoRepository.save(roomInfo);
-
-        roomInfo.setRoomId(2);
-        roomInfo.setHumanCount(0);
-        roomInfo.setStatus(RoomStatus.PENDING);
-        roomInfoRepository.save(roomInfo);
-
-        roomInfo.setRoomId(3);
-        roomInfo.setHumanCount(0);
-        roomInfo.setStatus(RoomStatus.PENDING);
-        roomInfoRepository.save(roomInfo);
-
-        roomInfo.setRoomId(4);
-        roomInfo.setHumanCount(0);
-        roomInfo.setStatus(RoomStatus.PENDING);
-        roomInfoRepository.save(roomInfo);
-
-        roomInfo.setRoomId(5);
-        roomInfo.setHumanCount(0);
-        roomInfo.setStatus(RoomStatus.PENDING);
-        roomInfoRepository.save(roomInfo);
-
-        roomInfo.setRoomId(6);
-        roomInfo.setHumanCount(0);
-        roomInfo.setStatus(RoomStatus.PENDING);
-        roomInfoRepository.save(roomInfo);
+//        RobotInfo robotInfo = new RobotInfo();
+//        robotInfo.setRobotId(1);
+//        robotInfo.setRecentRoom(0);
+//        robotInfo.setStatus(RobotStatus.RUNNING);
+//        robotInfoRepository.save(robotInfo);
+//
+//        robotInfo.setRobotId(2);
+//        robotInfo.setRecentRoom(0);
+//        robotInfo.setStatus(RobotStatus.WAITING);
+//        robotInfoRepository.save(robotInfo);
+//
+//        RoomInfo roomInfo = new RoomInfo();
+//        roomInfo.setRoomId(1);
+//        roomInfo.setHumanCount(0);
+//        roomInfo.setStatus(RoomStatus.PENDING);
+//        roomInfoRepository.save(roomInfo);
+//
+//        roomInfo.setRoomId(2);
+//        roomInfo.setHumanCount(0);
+//        roomInfo.setStatus(RoomStatus.PENDING);
+//        roomInfoRepository.save(roomInfo);
+//
+//        roomInfo.setRoomId(3);
+//        roomInfo.setHumanCount(0);
+//        roomInfo.setStatus(RoomStatus.PENDING);
+//        roomInfoRepository.save(roomInfo);
+//
+//        roomInfo.setRoomId(4);
+//        roomInfo.setHumanCount(0);
+//        roomInfo.setStatus(RoomStatus.PENDING);
+//        roomInfoRepository.save(roomInfo);
+//
+//        roomInfo.setRoomId(5);
+//        roomInfo.setHumanCount(0);
+//        roomInfo.setStatus(RoomStatus.PENDING);
+//        roomInfoRepository.save(roomInfo);
+//
+//        roomInfo.setRoomId(6);
+//        roomInfo.setHumanCount(0);
+//        roomInfo.setStatus(RoomStatus.PENDING);
+//        roomInfoRepository.save(roomInfo);
 
     }
 

@@ -2,11 +2,10 @@ package com.ra.web_backend.entity;
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
+import com.ra.web_backend.entity.status.RobotStatus;
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Optional;
 
 
@@ -23,10 +22,9 @@ public class RobotInfo extends BaseEntity {
     @Id
     private Integer robotId;
 
-    @Column
     private Integer recentRoom;
 
-    @Column
-    private Boolean status;
+    @Enumerated(value = EnumType.STRING)
+    private RobotStatus status;
 
 }

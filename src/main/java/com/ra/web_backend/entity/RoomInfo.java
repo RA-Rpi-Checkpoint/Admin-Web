@@ -1,13 +1,12 @@
 package com.ra.web_backend.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import com.ra.web_backend.entity.status.RoomStatus;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString(callSuper = true)
@@ -17,9 +16,8 @@ public class RoomInfo extends BaseEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer RoomId;
 
-    @Column
     private int humanCount;
 
-    @Column
-    private Boolean status;
+    @Enumerated(value = EnumType.STRING)
+    private RoomStatus status = RoomStatus.PENDING;
 }

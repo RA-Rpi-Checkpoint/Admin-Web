@@ -13,9 +13,10 @@ import javax.persistence.*;
 @EqualsAndHashCode(callSuper = true)
 public class RoomInfo extends BaseEntity{
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "room_id")
     private Integer RoomId;
 
+    @Column(name = "human_count")
     private int humanCount;
 
     @Enumerated(value = EnumType.STRING)

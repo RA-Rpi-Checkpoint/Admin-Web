@@ -39,7 +39,7 @@ class RobotInfoRepositoryTest {
     @Test
     void roomTest() {
         RoomInfo roomInfo = new RoomInfo();
-        roomInfo.setRoomId(1);
+        roomInfo.setRoomId(2);
         roomInfo.setHumanCount(2);
         roomInfo.setStatus(RoomStatus.PENDING);
         roomInfoRepository.save(roomInfo);

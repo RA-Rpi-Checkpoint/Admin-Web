@@ -1,31 +1,24 @@
 package com.ra.web_backend.entity;
 
-import com.fasterxml.jackson.databind.PropertyNamingStrategy;
-import com.fasterxml.jackson.databind.annotation.JsonNaming;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-@Data
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder // 빌더 패턴
-// ORM -> JAVA Object -> 테이블로 매핑해주는 기술
-@Entity // User 클래스가 MySQL에 테이블이 생성이 된다.
-//@DynamicInsert // insert할 때 null인 필드 제외
-@JsonNaming(value = PropertyNamingStrategy.SnakeCaseStrategy.class)
-public class RoomInfo {
-
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
+public class RoomInfo extends BaseEntity{
     @Id
-    private Integer robotNum;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer RoomId;
 
     @Column
-    private Integer roomNum;
-
-    @Column
-    private Integer humanCount;
+    private int humanCount;
 
     @Column
     private Boolean status;

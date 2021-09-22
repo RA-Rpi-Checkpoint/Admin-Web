@@ -1,6 +1,6 @@
 package com.ra.web_backend.service;
 
-import com.ra.web_backend.entity.RoomInfo;
+import com.ra.web_backend.entity.RobotInfo;
 import com.ra.web_backend.repository.RoomInfoRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -19,21 +19,21 @@ public class RoomService {
 
 
     //    모든로봇정보 조회
-    public Page<RoomInfo> getAllRobotInfo(final Pageable pageable) {
+    public Page<RobotInfo> getAllRobotInfo(final Pageable pageable) {
         return roomInfoRepository.findAll(pageable);
     }
 
     //    로봇정보 조회
-    public Optional<RoomInfo> getRobotInfo(int key) {
+    public Optional<RobotInfo> getRobotInfo(int key) {
         return roomInfoRepository.findById(key);
     }
 
     //    로봇정보 업데이트
     @Transactional
     public void editRobotInfo(int robotNum, int roomNum, int humanCount, boolean status) throws Exception {
-        Optional<RoomInfo> oRobot = roomInfoRepository.findById(robotNum);
+        Optional<RobotInfo> oRobot = roomInfoRepository.findById(robotNum);
         if (oRobot.isPresent()) {
-            RoomInfo robot = oRobot.get();
+            RobotInfo robot = oRobot.get();
             robot.setRobotNum(robotNum);
             robot.setRoomNum(roomNum);
             robot.setHumanCount(humanCount);

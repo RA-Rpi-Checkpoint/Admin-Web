@@ -1,25 +1,14 @@
 package com.ra.web_backend.controller;
 
 import com.ra.web_backend.dto.ResponseDto;
-import com.ra.web_backend.dto.RoomInfoForm;
-import com.ra.web_backend.entity.RoomInfo;
-import com.ra.web_backend.repository.RoomInfoRepository;
+import com.ra.web_backend.entity.RobotInfo;
 import com.ra.web_backend.service.RoomService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.MediaType;
-import org.springframework.ui.Model;
-import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.tags.Param;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
-import java.util.UUID;
 
 @Slf4j
 @RestController
@@ -44,9 +33,9 @@ public class ApiController {
         ResponseDto<?> result = null;
 
         // robot1의 정보
-        Optional<RoomInfo> robotInfo = roomService.getRobotInfo(robotId);
+        Optional<RobotInfo> robotInfo = roomService.getRobotInfo(robotId);
         if (robotInfo.isPresent()) {
-            RoomInfo robot = robotInfo.get();
+            RobotInfo robot = robotInfo.get();
             result = new ResponseDto<>("0000", "성공", "조회성공", robot);
         } else {
             result = new ResponseDto<>("0400", "실패", "조회실패", null);

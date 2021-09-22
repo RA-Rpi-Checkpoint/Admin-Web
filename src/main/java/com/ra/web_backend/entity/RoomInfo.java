@@ -19,5 +19,5 @@ public class RoomInfo extends BaseEntity{
     private int humanCount;
 
     @Enumerated(value = EnumType.STRING)
-    private RoomStatus status = RoomStatus.PENDING;
+    private RoomStatus status;
 }

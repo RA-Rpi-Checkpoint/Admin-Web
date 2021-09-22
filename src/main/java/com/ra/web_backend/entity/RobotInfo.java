@@ -6,6 +6,7 @@ import com.ra.web_backend.entity.status.RobotStatus;
 import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 
@@ -14,7 +15,6 @@ import java.util.Optional;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 @JsonNaming(value = PropertyNamingStrategy.SnakeCaseStrategy.class)

@@ -13,22 +13,29 @@ spring:
       prefix: /WEB-INF/views/
       suffix: .jsp
 
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver # mysql의 jdbc 드라이버
+#    url: jdbc:mysql://stock-chatbot-rds.cgw5ybwbhaw9.ap-northeast-2.rds.amazonaws.com/ra?useUnicode=true&serverTimezone=Asia/Seoul # 데이터베이스 url
+#    username: ra
+#    password: a40844084
+
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver # mysql의 jdbc 드라이버
-    url: jdbc:mysql://stock-chatbot-rds.cgw5ybwbhaw9.ap-northeast-2.rds.amazonaws.com/ra?useUnicode=true&serverTimezone=Asia/Seoul # 데이터베이스 url
-    username: ra
-    password: a40844084
+    url: jdbc:mysql://localhost:3306/raproject
+    username: root
+    password: tjddnjssql1!
+    initialization-mode: always
 
   jpa:
     open-in-view: true
     hibernate:
-      ddl-auto: update # 프로젝트를 실행할 때마다 새로 만든다. // update, none // 최초에만 create
+      ddl-auto: create # 프로젝트를 실행할 때마다 새로 만든다. // update, none // 최초에만 create
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
       use-new-id-generator-mappings: false # JPA의 기본 넘버링 전략을 따라가지 않고, 프로젝트에서 연결된 DB의 넘버링 전략을 따라간다.
-    show-sql: false
+    show-sql: true
     properties:
-      hibernate.format_sql: true
+      hibernate:
+        format_sql: true
 
     jackson:
       serialization:

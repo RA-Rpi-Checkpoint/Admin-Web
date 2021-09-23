@@ -355,28 +355,28 @@
                                                 <td> Room.1 </td>
                                                 <td> ${human1} </td>
                                                 <td>
-                                                    <span class="badge badge-complete">${roomStatus1}</span>
+                                                    <span class="badge ${roomStatusClass1}">${roomStatus1}</span>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td> Room.2 </td>
                                                 <td> ${human2} </td>
                                                 <td>
-                                                    <span class="badge badge-complete">${roomStatus2}</span>
+                                                    <span class="badge ${roomStatusClass2}">${roomStatus2}</span>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td> Room.3 </td>
                                                 <td> ${human3} </td>
                                                 <td>
-                                                    <span class="badge badge-complete">${roomStatus3}</span>
+                                                    <span class="badge ${roomStatusClass3}">${roomStatus3}</span>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td> Room.4 </td>
                                                 <td> ${human4}</td>
                                                 <td>
-                                                    <span class="badge badge-pending"> ${roomStatus4} </span>
+                                                    <span class="badge ${roomStatusClass4}"> ${roomStatus4} </span>
                                                 </td>
                                             </tr>
                                             </tbody>
@@ -414,8 +414,8 @@
                                                 <td> #Raspbot 1</td>
                                                 <td>  <span class="name">Gate ${robotLocation1}</span> </td>
                                                 <td>
-                                                    <span class="ml-status-circle proccessed fa"></span>
-                                                    <span class="badge badge-complete">${robotStatus2}</span>
+                                                    <span class="${warningSignal1}"></span>
+                                                    <span class="badge ${robotStatusClass1}">${robotStatus1}</span>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -428,8 +428,8 @@
                                                 <td> #Raspbot 2</td>
                                                 <td>  <span class="name">Gate ${robotLocation2}</span> </td>
                                                 <td>
-                                                    <span class="ml-status-circle error fa"></span>
-                                                    <span class="badge badge-pending">${robotStatus2}</span>
+                                                    <span class="${warningSignal2}"></span>
+                                                    <span class="badge ${robotStatusClass2}">${robotStatus2}</span>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -442,8 +442,8 @@
                                                 <td> #PicarPro 1</td>
                                                 <td>  <span class="name">Not Depart</span> </td>
                                                 <td>
-                                                    <span class="ml-status-circle proccessed fa"></span>
-                                                    <span class="badge badge-pause">${robotStatus3}</span>
+                                                    <span class="${warningSignal3}"></span>
+                                                    <span class="badge ${robotStatusClass3}">${robotStatus3}</span>
                                                 </td>
                                             </tr>
                                             </tbody>

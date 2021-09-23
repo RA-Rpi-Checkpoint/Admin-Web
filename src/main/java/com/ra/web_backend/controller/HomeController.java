@@ -1,5 +1,6 @@
 package com.ra.web_backend.controller;
 
+import com.ra.web_backend.entity.status.RobotStatus;
 import com.ra.web_backend.entity.status.RoomStatus;
 import com.ra.web_backend.repository.RobotInfoRepository;
 import com.ra.web_backend.repository.RoomInfoRepository;
@@ -21,38 +22,49 @@ public class HomeController {
   public String index(Model model) {
 
     // Room table값 변경
-    model.addAttribute("human1",changeRoomHuman(1));
-    model.addAttribute("human2",changeRoomHuman(2));
-    model.addAttribute("human3",changeRoomHuman(3));
-    model.addAttribute("human4",changeRoomHuman(4));
+    changeRoomInfo(1, model);
+    changeRoomInfo(2, model);
+    changeRoomInfo(3, model);
+    changeRoomInfo(4, model);
 
-    model.addAttribute("roomStatus1",roomInfoRepository.findByRoomId(1).getStatus());
-    model.addAttribute("roomStatus2",roomInfoRepository.findByRoomId(2).getStatus());
-    model.addAttribute("roomStatus3",roomInfoRepository.findByRoomId(3).getStatus());
-    model.addAttribute("roomStatus4",roomInfoRepository.findByRoomId(4).getStatus());
 
     // Robot table값 변경
-    model.addAttribute("robotLocation1", robotInfoRepository.findByRobotId(1).getRecentRoom());
-    model.addAttribute("robotLocation2", robotInfoRepository.findByRobotId(2).getRecentRoom());
-
-    model.addAttribute("robotStatus1",robotInfoRepository.findByRobotId(1).getStatus());
-    model.addAttribute("robotStatus2",robotInfoRepository.findByRobotId(2).getStatus());
-    model.addAttribute("robotStatus3",robotInfoRepository.findByRobotId(3).getStatus());
+    changeRobotInfo(1, model);
+    changeRobotInfo(2, model);
+    changeRobotInfo(3, model);
 
     return "index";
 
   }
 
-  private String changeRoomHuman(int roomNum) {
+  private void changeRoomInfo(int roomNum, Model model) {
     int humanCount = roomInfoRepository.findByRoomId(roomNum).getHumanCount();
 
     if (humanCount == 0) {
-      return "No one was found.";
+      model.addAttribute("human"+roomNum, "No one was found.");
     }
     else {
-      return humanCount+" people were found in this room.";
+      model.addAttribute("human"+roomNum, humanCount+" people were found in this room.");
     }
+
+    RoomStatus status = roomInfoRepository.findByRoomId(roomNum).getStatus();
+    model.addAttribute("roomStatus"+roomNum, status);
+    if (status == RoomStatus.COMPLETE) model.addAttribute("roomStatusClass"+roomNum,"badge-complete");
+    else if (status == RoomStatus.WAITING) model.addAttribute("roomStatusClass"+roomNum,"badge-pause");
+
   }
 
+  private void changeRobotInfo(int robotNum, Model model) {
+    model.addAttribute("robotLocation"+robotNum, robotInfoRepository.findByRobotId(robotNum).getRecentRoom());
+    model.addAttribute("robotStatus"+robotNum,robotInfoRepository.findByRobotId(robotNum).getStatus());
 
+    RobotStatus status = robotInfoRepository.findByRobotId(robotNum).getStatus();
+    if (status == RobotStatus.COMPLETE) model.addAttribute("robotStatusClass"+robotNum,"badge-complete");
+    else if (status == RobotStatus.WAITING) model.addAttribute("robotStatusClass"+robotNum,"badge-pause");
+    else if (status == RobotStatus.FAILURE) model.addAttribute("robotStatusClass"+robotNum,"badge-pending");
+    else if (status == RobotStatus.RUNNING) model.addAttribute("robotStatusClass"+robotNum,"badge-running");
+
+    if (status == RobotStatus.FAILURE) model.addAttribute("warningSignal"+robotNum, "ml-status-circle error fa");
+    else if(status == RobotStatus.COMPLETE) model.addAttribute("warningSignal"+robotNum, "ml-status-circle proccessed fa");
+  }
 }

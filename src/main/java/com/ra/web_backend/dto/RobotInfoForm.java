@@ -2,6 +2,7 @@ package com.ra.web_backend.dto;
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
+import com.ra.web_backend.entity.status.RobotStatus;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,15 +15,15 @@ import org.springframework.stereotype.Service;
 @ToString
 @NoArgsConstructor
 @JsonNaming(value = PropertyNamingStrategy.SnakeCaseStrategy.class)
-public class RoomInfoForm {
+public class RobotInfoForm {
 
     private Integer robotNum;
     private Integer roomNum;
     private Integer humanCount;
-    private Boolean status;
+    private RobotStatus status;
 
     @Builder
-    public RoomInfoForm(Integer robotNum, Integer roomNum, Integer humanCount, Boolean status) {
+    public RobotInfoForm(Integer robotNum, Integer roomNum, Integer humanCount, RobotStatus status) {
         this.robotNum = robotNum;
         this.roomNum = roomNum;
         this.humanCount = humanCount;

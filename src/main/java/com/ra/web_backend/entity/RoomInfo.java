@@ -7,6 +7,7 @@ import javax.persistence.*;
 
 @Entity
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString(callSuper = true)
@@ -14,7 +15,7 @@ import javax.persistence.*;
 public class RoomInfo extends BaseEntity{
     @Id
     @Column(name = "room_id")
-    private Integer RoomId;
+    private Integer roomId;
 
     @Column(name = "human_count")
     private int humanCount;

@@ -13,6 +13,7 @@ import java.util.Optional;
 //@DynamicInsert // insert할 때 null인 필드 제외
 @Entity
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString(callSuper = true)

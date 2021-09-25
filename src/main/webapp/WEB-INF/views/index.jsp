@@ -10,7 +10,7 @@
     <head profile="http://www.w3.org/2005/10/profile">
         <meta name="description" content="Ela Admin - HTML5 Admin Template">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <META HTTP-EQUIV="refresh" CONTENT="10">
+        <!--META HTTP-EQUIV="refresh" CONTENT="15"-->
         <link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
         <link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png">
 
@@ -288,27 +288,18 @@
                 }
             }
         </style>
+
+
+
     </head>
+
+
 
 <body>
 
 <!-- Right Panel -->
-<div id="right-panel" class="right-panel">
-    <!-- Header-->
-    <header id="header" class="header">
-        <div class="top-left">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="./"><img src="images/logo.png" alt="Logo"></a>
-
-            </div>
-        </div>
-    </header>
-    <!-- /#header -->
-    <!-- Content -->
-    <div class="content">
-        <!-- Animated -->
-    </div>
-    <div class="animated fadeIn">
+<div class="background">
+    <div id="right-panel" class="right-panel">
         <!-- Orders -->
         <div class="orders">
             <div class="row">
@@ -317,16 +308,75 @@
                         <div class="card-body">
                             <h4 class="box-title">Explore Map </h4>
                             <hr style = margin-bottom:5px>
-                            <div class="frame" style ="margin: 0px 25% 5% 25%">
-                                <div class="header">
-                                </div>
-                                <div class="board"></div>
-                                <div class="footer">
-                                    <div class="info"></div>
-                                </div>
+                            <div style="text-align : center;">
+                                <a href="#"><img class="map" src="../../images/map1.png" alt=""></a>
                             </div>
                         </div>
-
+                        <div class="card-body--">
+                        </div>
+                        <hr>
+                        <div class="card-body">
+                            <h4 class="box-title">Robot Status </h4>
+                        </div>
+                        <div class="card-body--">
+                            <div class="table-stats order-table ov-h">
+                                <table class="table ">
+                                    <thead>
+                                    <tr>
+                                        <th class="serial">#</th>
+                                        <th class="avatar">Avatar</th>
+                                        <th>Name</th>
+                                        <th>Location</th>
+                                        <th>Status</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td class="serial">1</td>
+                                        <td class="avatar">
+                                            <div class="round-img">
+                                                <a href="#"><img class="rounded-circle" src="../../images/avatar/raspbot.jpg" alt=""></a>
+                                            </div>
+                                        </td>
+                                        <td> #Raspbot 1</td>
+                                        <td>  <span class="name">Gate ${robotLocation1}</span> </td>
+                                        <td>
+                                            <span class="${warningSignal1}"></span>
+                                            <span class="badge ${robotStatusClass1}">${robotStatus1}</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="serial">2</td>
+                                        <td class="avatar">
+                                            <div class="round-img">
+                                                <a href="#"><img class="rounded-circle" src="../../images/avatar/raspbot.jpg" alt=""></a>
+                                            </div>
+                                        </td>
+                                        <td> #Raspbot 2</td>
+                                        <td>  <span class="name">Gate ${robotLocation2}</span> </td>
+                                        <td>
+                                            <span class="${warningSignal2}"></span>
+                                            <span class="badge ${robotStatusClass2}">${robotStatus2}</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="serial">3</td>
+                                        <td class="avatar">
+                                            <div class="round-img">
+                                                <a href="#"><img class="rounded-circle" src="../../images/avatar/raspbot.jpg" alt=""></a>
+                                            </div>
+                                        </td>
+                                        <td> #Raspbot 2</td>
+                                        <td>  <span class="name">Not Depart</span> </td>
+                                        <td>
+                                            <span class="${warningSignal3}"></span>
+                                            <span class="badge ${robotStatusClass3}">${robotStatus3}</span>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
 
                     </div>
 
@@ -384,75 +434,43 @@
                                     </div> <!-- /.table-stats -->
                                 </div>
                             </div> <!-- /.card -->
-                        </div>
 
-                        <div class="col-lg-6 col-xl-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="box-title">Robot Status </h4>
-                                </div>
-                                <div class="card-body--">
-                                    <div class="table-stats order-table ov-h">
-                                        <table class="table ">
-                                            <thead>
-                                            <tr>
-                                                <th class="serial">#</th>
-                                                <th class="avatar">Avatar</th>
-                                                <th>Name</th>
-                                                <th>Location</th>
-                                                <th>Status</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <td class="serial">1</td>
-                                                <td class="avatar">
-                                                    <div class="round-img">
-                                                        <a href="#"><img class="rounded-circle" src="../../images/avatar/raspbot.jpg" alt=""></a>
-                                                    </div>
-                                                </td>
-                                                <td> #Raspbot 1</td>
-                                                <td>  <span class="name">Gate ${robotLocation1}</span> </td>
-                                                <td>
-                                                    <span class="${warningSignal1}"></span>
-                                                    <span class="badge ${robotStatusClass1}">${robotStatus1}</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="serial">2</td>
-                                                <td class="avatar">
-                                                    <div class="round-img">
-                                                        <a href="#"><img class="rounded-circle" src="../../images/avatar/raspbot.jpg" alt=""></a>
-                                                    </div>
-                                                </td>
-                                                <td> #Raspbot 2</td>
-                                                <td>  <span class="name">Gate ${robotLocation2}</span> </td>
-                                                <td>
-                                                    <span class="${warningSignal2}"></span>
-                                                    <span class="badge ${robotStatusClass2}">${robotStatus2}</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="serial">3</td>
-                                                <td class="avatar">
-                                                    <div class="round-img">
-                                                        <a href="#"><img class="rounded-circle" src="../../images/avatar/ADR019.jpg" alt=""></a>
-                                                    </div>
-                                                </td>
-                                                <td> #PicarPro 1</td>
-                                                <td>  <span class="name">Not Depart</span> </td>
-                                                <td>
-                                                    <span class="${warningSignal3}"></span>
-                                                    <span class="badge ${robotStatusClass3}">${robotStatus3}</span>
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
+                                    Exploration Graph
+                                    <div class="stat-levels">
+                                        <span class="name">Working Rate</span>
+                                        <div class="stat-1 stat-bar">
+                                            <span class="stat-bar-rating" role="stat-bar" style="width: 80%;">80%</span>
+                                        </div>
+                                        <span class="name">Rescue Rate</span>
+                                        <div class="stat-2 stat-bar">
+                                            <span class="stat-bar-rating" role="stat-bar" style="width: 45%;">45%</span>
+                                        </div>
+                                        <span class="name">Robot Status Rate</span>
+                                        <div class="stat-3 stat-bar">
+                                            <span class="stat-bar-rating" role="stat-bar" style="width: 20%;">20%</span>
+                                        </div>
                                     </div>
-
                                 </div>
                             </div>
 
+                            <div class="card">
+                                <div class="card-body">
+                                    <a href="#"><img style="width: 100%" src="../../images/logo.jpg" alt=""></a>
+                                </div>
+                            </div>
+
+                            <!-- ê¸°ì¡´ ê·¸ë  í
+                                                            <div class="col-lg-6 col-xl-12">
+                                                                <div class="card br-0">
+                                                                    <div class="card-body">
+                                                                        <div class="chart-container ov-h">
+                                                                            <div id="flotPie1" class="float-chart"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            -->
                         </div>
                     </div>
                 </div> <!-- /.col-md-4 -->
@@ -466,20 +484,9 @@
     </div>
     <!-- .animated -->
 </div>
-<!-- /.content -->
-<div class="clearfix"></div>
 <!-- Footer -->
 <footer class="site-footer">
-    <div class="footer-inner bg-white">
-        <div class="row">
-            <div class="col-sm-6">
-                https://github.com/RA-Rpi-Checkpoint/WEB_Backend
-            </div>
-            <div class="col-sm-6 text-right">
-                Designed by <a href="https://colorlib.com">Colorlib</a>
-            </div>
-        </div>
-    </div>
+
 </footer>
 <!-- /.site-footer -->
 </div>
@@ -509,6 +516,7 @@
 <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.js"></script>
 <script src="../../assets/js/init/fullcalendar-init.js"></script>
+<script src="../../assets/js/map.js"></script>
 <!--Local Stuff-->
 <script>
     jQuery(document).ready(function($) {
@@ -544,88 +552,7 @@
         // Pie chart flotPie1  End
     });
 </script>
-<script>
-    let maze = [
-        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-        [1, 0, 0, 1, 1, 1, 1, 1, 3, 3, 3, 1, 1, 1, 0, 0, 0, 0, 0, 1],
-        [1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1],
-        [1, 5, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1],
-        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 5, 1],
-        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 1],
-        [1, 5, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-        [1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 5, 1, 1, 1],
-        [1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1],
-        [1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 2, 1, 1, 1, 1, 1, 0, 0, 0, 1],
-        [1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-    ]
-
-    let player = [2, 5]
-    let bag = 0
-
-    const ROWS = 12
-    const COLS = 20
-
-    const EMPTY = 0
-    const WALL = 1
-    const PLAYER = 2
-    const EXIT = 3
-    const EXIT_READY = 6
-    const DIAMOND = 4
-    const door = 5
-    const DIAMOND_COUNT = 12
-
-    const DOWN = 40
-    const UP = 38
-    const LEFT = 37
-    const RIGHT = 39
-
-    window.onload = () => {
-        createBoard()
-        renderMaze()
-    }
 
 
-    const createBoard = () => {
-        for (let row = 0; row < ROWS; row++) {
-            for (let col = 0; col < COLS; col++) {
-                const block = document.createElement('div')
-                block.id = `id-${col}-${row}`
-                document.querySelector(".board").appendChild(block);
-            }
-        }
-    }
-
-    const renderMaze = () => {
-
-        for (let row = 0; row < ROWS; row++) {
-            for (let col = 0; col < COLS; col++) {
-                let itemClass = ''
-                switch (maze[row][col]) {
-                    case PLAYER:
-                        itemClass = 'player'; break
-                    case WALL:
-                        itemClass = 'wall'; break
-                    case PLAYER:
-                        itemClass = 'human'; break
-                    case EXIT:
-                        itemClass = 'exit'; break
-                    case EXIT_READY:
-                        itemClass = 'exit show'; break
-                    case DIAMOND:
-                        itemClass = 'diamond'; break
-                    case door:
-                        itemClass = 'door'; break
-                    default:
-                        itemClass = 'empty'
-                }
-                const id = `#id-${col}-${row}`
-
-                document.querySelector(id).className = `block ${itemClass}`
-            }
-        }
-    }
-
-</script>
 </body>
 </html>

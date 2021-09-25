@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8082
   servlet:
     context-path: /
     encoding:
@@ -13,21 +13,21 @@ spring:
       prefix: /WEB-INF/views/
       suffix: .jsp
 
-#  datasource:
-#    driver-class-name: com.mysql.cj.jdbc.Driver # mysql의 jdbc 드라이버
-#    url: jdbc:mysql://stock-chatbot-rds.cgw5ybwbhaw9.ap-northeast-2.rds.amazonaws.com/ra?useUnicode=true&serverTimezone=Asia/Seoul # 데이터베이스 url
-#    username: ra
-#    password: a40844084
-
   datasource:
-    url: jdbc:mysql://localhost:3306/raproject
-    username: root
-    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver # mysql의 jdbc 드라이버
+    url: jdbc:mysql://stock-chatbot-rds.cgw5ybwbhaw9.ap-northeast-2.rds.amazonaws.com/ra?useUnicode=true&serverTimezone=Asia/Seoul # 데이터베이스 url
+    username: ra
+    password: a40844084
     initialization-mode: always
+
+  #  datasource:
+  #    url: jdbc:mysql://localhost:3306/raproject
+  #    username: root
+  #    password:
+  #    initialization-mode: always
 
   jpa:
     defer-datasource-initialization: true
-
     open-in-view: true
     hibernate:
       ddl-auto: create # 프로젝트를 실행할 때마다 새로 만든다. // update, none // 최초에만 create
@@ -50,3 +50,4 @@ spring:
       enabled: true
   freemarker:
     cache: false
+

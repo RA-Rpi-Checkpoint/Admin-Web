@@ -10,7 +10,7 @@
     <head profile="http://www.w3.org/2005/10/profile">
         <meta name="description" content="Ela Admin - HTML5 Admin Template">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!--META HTTP-EQUIV="refresh" CONTENT="15"-->
+        <META HTTP-EQUIV="refresh" CONTENT="10">
         <link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
         <link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png">
 

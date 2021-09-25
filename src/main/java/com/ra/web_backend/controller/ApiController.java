@@ -45,7 +45,7 @@ public class ApiController {
     }
 
     @RequestMapping(value = "/roomcheck", method = RequestMethod.GET)
-    public ResponseDto<?> updateRoomInfo(@RequestParam("robotNum") int robotNum, @RequestParam("roomNum") int roomNum, @RequestParam("humanCount") int humanCount, @RequestParam("status") RobotStatus status) throws Exception {
+    public ResponseDto<?> updateRoomInfo(@RequestParam("robotNum") int robotNum, @RequestParam("roomNum") int roomNum, @RequestParam("humanCount") int humanCount, @RequestParam("robotStatus") RobotStatus status) throws Exception {
         ResponseDto<?> result = null;
         String data = "robotNum: " + robotNum + " roomNum: " + roomNum + " humanCount: " + humanCount + " status: " + status;
 //        System.out.println(robotNum);
@@ -63,5 +63,4 @@ public class ApiController {
     }
 
 }
-
 

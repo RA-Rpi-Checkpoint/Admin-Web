@@ -34,7 +34,7 @@ spring:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
       use-new-id-generator-mappings: false # JPA의 기본 넘버링 전략을 따라가지 않고, 프로젝트에서 연결된 DB의 넘버링 전략을 따라간다.
-    show-sql: true
+    show-sql: false
     properties:
       hibernate:
         format_sql: true

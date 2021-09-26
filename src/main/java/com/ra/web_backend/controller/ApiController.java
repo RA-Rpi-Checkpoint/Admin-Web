@@ -7,7 +7,13 @@ import com.ra.web_backend.service.RoomRobotService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Optional;
 
@@ -17,7 +23,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class ApiController {
 
-    final RoomRobotService roomRobotService;
+  final RoomRobotService roomRobotService;
 
 
 //    @GetMapping("/roominfo")
@@ -28,39 +34,39 @@ public class ApiController {
 //    }
 
 
-    @GetMapping("/roominfo/{robotId}")
-    @ResponseBody
-    public ResponseDto<?> getRoomInfo(@PathVariable("robotId") int robotId) {
-        ResponseDto<?> result = null;
+  @GetMapping("/roominfo/{robotId}")
+  @ResponseBody
+  public ResponseDto<?> getRoomInfo(@PathVariable("robotId") int robotId) {
+    ResponseDto<?> result = null;
 
-        // robot1의 정보
-        Optional<RobotInfo> robotInfo = roomRobotService.getRobotInfo(robotId);
-        if (robotInfo.isPresent()) {
-            RobotInfo robot = robotInfo.get();
-            result = new ResponseDto<>("0000", "성공", "조회성공", robot);
-        } else {
-            result = new ResponseDto<>("0400", "실패", "조회실패", null);
-        }
-        return result;
+    // robot1의 정보
+    Optional<RobotInfo> robotInfo = roomRobotService.getRobotInfo(robotId);
+    if (robotInfo.isPresent()) {
+      RobotInfo robot = robotInfo.get();
+      result = new ResponseDto<>("0000", "성공", "조회성공", robot);
+    } else {
+      result = new ResponseDto<>("0400", "실패", "조회실패", null);
     }
+    return result;
+  }
 
-    @RequestMapping(value = "/roomcheck", method = RequestMethod.GET)
-    public ResponseDto<?> updateRoomInfo(@RequestParam("robotNum") int robotNum, @RequestParam("roomNum") int roomNum, @RequestParam("humanCount") int humanCount, @RequestParam("robotStatus") RobotStatus status) throws Exception {
-        ResponseDto<?> result = null;
-        String data = "robotNum: " + robotNum + " roomNum: " + roomNum + " humanCount: " + humanCount + " status: " + status;
+  @RequestMapping(value = "/roomcheck", method = RequestMethod.GET)
+  public ResponseDto<?> updateRoomInfo(@RequestParam("robotNum") int robotNum, @RequestParam("roomNum") int roomNum, @RequestParam("humanCount") int humanCount, @RequestParam("robotStatus") RobotStatus status) throws Exception {
+    ResponseDto<?> result = null;
+    String data = "robotNum: " + robotNum + " roomNum: " + roomNum + " humanCount: " + humanCount + " status: " + status;
 //        System.out.println(robotNum);
 //        System.out.println(roomNum);
 //        System.out.println(humanCount);
 //        System.out.println(status);
-        try {
-            roomRobotService.editRobotInfo(robotNum, roomNum, status);
-            roomRobotService.editRoomInfo(roomNum, humanCount);
-            result = new ResponseDto<>("0000", "수정성공", "수정완료", data);
-        } catch (Exception e) {
-            result = new ResponseDto<>("0400", "수정실패", "로봇정보를 찾을 수 없음", e);
-        }
-        return result;
+    try {
+      roomRobotService.editRobotInfo(robotNum, roomNum, status);
+      roomRobotService.editRoomInfo(roomNum, humanCount);
+      result = new ResponseDto<>("0000", "수정성공", "수정완료", data);
+    } catch (Exception e) {
+      result = new ResponseDto<>("0400", "수정실패", "로봇정보를 찾을 수 없음", e);
     }
+    return result;
+  }
 
 }
 

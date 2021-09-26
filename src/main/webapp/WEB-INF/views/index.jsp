@@ -315,70 +315,19 @@
                         <div class="card-body--">
                         </div>
                     </div>
+
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="box-title">Robot Status </h4>
-                        </div>
-                        <div class="card-body--">
-                            <div class="table-stats order-table ov-h">
-                                <table class="table ">
-                                    <thead>
-                                    <tr>
-                                        <th class="serial">#</th>
-                                        <th class="avatar">Avatar</th>
-                                        <th>Name</th>
-                                        <th>Location</th>
-                                        <th>Status</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td class="serial">1</td>
-                                        <td class="avatar">
-                                            <div class="round-img">
-                                                <a href="#"><img class="rounded-circle" src="../../images/avatar/raspbot.jpg" alt=""></a>
-                                            </div>
-                                        </td>
-                                        <td> #Raspbot 1</td>
-                                        <td>  <span class="name">Gate ${robotLocation1}</span> </td>
-                                        <td>
-                                            <span class="${warningSignal1}"></span>
-                                            <span class="badge ${robotStatusClass1}">${robotStatus1}</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="serial">2</td>
-                                        <td class="avatar">
-                                            <div class="round-img">
-                                                <a href="#"><img class="rounded-circle" src="../../images/avatar/raspbot.jpg" alt=""></a>
-                                            </div>
-                                        </td>
-                                        <td> #Raspbot 2</td>
-                                        <td>  <span class="name">Gate ${robotLocation2}</span> </td>
-                                        <td>
-                                            <span class="${warningSignal2}"></span>
-                                            <span class="badge ${robotStatusClass2}">${robotStatus2}</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="serial">3</td>
-                                        <td class="avatar">
-                                            <div class="round-img">
-                                                <a href="#"><img class="rounded-circle" src="../../images/avatar/raspbot.jpg" alt=""></a>
-                                            </div>
-                                        </td>
-                                        <td> #Raspbot 2</td>
-                                        <td>  <span class="name">Not Depart</span> </td>
-                                        <td>
-                                            <span class="${warningSignal3}"></span>
-                                            <span class="badge ${robotStatusClass3}">${robotStatus3}</span>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
+                            Exploration Graph
+                            <div class="stat-levels">
+                                <span class="name">Working Rate</span>
+                                <div class="stat-3 stat-bar">
+                                    <span class="stat-bar-rating" role="stat-bar" style="width: ${workingRate}%;">50%</span>
+                                </div>
                             </div>
                         </div>
                     </div>
+
 
                 </div>  <!-- /.col-lg-8 -->
 
@@ -437,15 +386,70 @@
 
                             <div class="card">
                                 <div class="card-body">
-                                    Exploration Graph
-                                    <div class="stat-levels">
-                                        <span class="name">Working Rate</span>
-                                        <div class="stat-3 stat-bar">
-                                            <span class="stat-bar-rating" role="stat-bar" style="width: ${workingRate}%;">50%</span>
-                                        </div>
+                                    <h4 class="box-title">Robot Status </h4>
+                                </div>
+                                <div class="card-body--">
+                                    <div class="table-stats order-table ov-h">
+                                        <table class="table ">
+                                            <thead>
+                                            <tr>
+                                                <th class="serial">#</th>
+                                                <th class="avatar">Avatar</th>
+                                                <th>Name</th>
+                                                <th>Location</th>
+                                                <th>Status</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td class="serial">1</td>
+                                                <td class="avatar">
+                                                    <div class="round-img">
+                                                        <a href="#"><img class="rounded-circle" src="../../images/avatar/raspbot.jpg" alt=""></a>
+                                                    </div>
+                                                </td>
+                                                <td> #Raspbot 1</td>
+                                                <td>  <span class="name">Gate ${robotLocation1}</span> </td>
+                                                <td>
+                                                    <span class="${warningSignal1}"></span>
+                                                    <span class="badge ${robotStatusClass1}">${robotStatus1}</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="serial">2</td>
+                                                <td class="avatar">
+                                                    <div class="round-img">
+                                                        <a href="#"><img class="rounded-circle" src="../../images/avatar/raspbot.jpg" alt=""></a>
+                                                    </div>
+                                                </td>
+                                                <td> #Raspbot 2</td>
+                                                <td>  <span class="name">Gate ${robotLocation2}</span> </td>
+                                                <td>
+                                                    <span class="${warningSignal2}"></span>
+                                                    <span class="badge ${robotStatusClass2}">${robotStatus2}</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="serial">3</td>
+                                                <td class="avatar">
+                                                    <div class="round-img">
+                                                        <a href="#"><img class="rounded-circle" src="../../images/avatar/raspbot.jpg" alt=""></a>
+                                                    </div>
+                                                </td>
+                                                <td> #Raspbot 2</td>
+                                                <td>  <span class="name">Not Depart</span> </td>
+                                                <td>
+                                                    <span class="${warningSignal3}"></span>
+                                                    <span class="badge ${robotStatusClass3}">${robotStatus3}</span>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
+
+
 
                             <div class="card">
                                 <div class="card-body">

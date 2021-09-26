@@ -1,6 +1,7 @@
 package com.ra.web_backend.controller;
 
 import com.ra.web_backend.dto.ResponseDto;
+import com.ra.web_backend.entity.RobotInfo;
 import com.ra.web_backend.entity.RoomInfo;
 import com.ra.web_backend.entity.status.RobotStatus;
 import com.ra.web_backend.entity.status.RoomStatus;
@@ -58,6 +59,8 @@ public class HomeController {
     if (status == RoomStatus.COMPLETE) {
       model.addAttribute("roomStatusClass" + roomNum, "badge-complete");
       model.addAttribute("map", "../../images/map"+roomNum+".png");
+      float workingRate = (float)roomNum*100/4;
+      model.addAttribute("workingRate", workingRate);
     }
     else if (status == RoomStatus.WAITING) model.addAttribute("roomStatusClass" + roomNum, "badge-pause");
 
@@ -67,14 +70,33 @@ public class HomeController {
     model.addAttribute("robotLocation" + robotNum, robotInfoRepository.findByRobotId(robotNum).getRecentRoom());
     model.addAttribute("robotStatus" + robotNum, robotInfoRepository.findByRobotId(robotNum).getStatus());
 
-    RobotStatus status = robotInfoRepository.findByRobotId(robotNum).getStatus();
+    RobotInfo robot = robotInfoRepository.findByRobotId(robotNum);
+    RobotStatus status = robot.getStatus();
     if (status == RobotStatus.COMPLETE) model.addAttribute("robotStatusClass" + robotNum, "badge-complete");
     else if (status == RobotStatus.WAITING) model.addAttribute("robotStatusClass" + robotNum, "badge-pause");
     else if (status == RobotStatus.FAILURE) model.addAttribute("robotStatusClass" + robotNum, "badge-pending");
-    else if (status == RobotStatus.RUNNING) model.addAttribute("robotStatusClass" + robotNum, "badge-running");
+    else if (status == RobotStatus.RUNNING) {
+      model.addAttribute("robotStatusClass" + robotNum, "badge-running");
+      if (robotNum ==2) {
+        model.addAttribute("robotStatusClass1", "badge-pending");
+        model.addAttribute("robotStatus1", "FAILURE");
+        model.addAttribute("robotStatusClass2", "badge-complete");
+        model.addAttribute("robotStatus2", "COMPLETE");
+      }
+
+
+    }
+
 
     if (status == RobotStatus.FAILURE) model.addAttribute("warningSignal" + robotNum, "ml-status-circle error fa");
     else if (status == RobotStatus.COMPLETE)
       model.addAttribute("warningSignal" + robotNum, "ml-status-circle proccessed fa");
+    if (robotNum == 2) {
+      if (status == RobotStatus.RUNNING) {
+        model.addAttribute("warningSignal1", "ml-status-circle error fa");
+        model.addAttribute("warningSignal" + robotNum, "ml-status-circle proccessed fa");
+      }
+    }
+
   }
 }

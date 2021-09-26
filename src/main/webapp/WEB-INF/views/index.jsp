@@ -440,16 +440,8 @@
                                     Exploration Graph
                                     <div class="stat-levels">
                                         <span class="name">Working Rate</span>
-                                        <div class="stat-1 stat-bar">
-                                            <span class="stat-bar-rating" role="stat-bar" style="width: 80%;">80%</span>
-                                        </div>
-                                        <span class="name">Rescue Rate</span>
-                                        <div class="stat-2 stat-bar">
-                                            <span class="stat-bar-rating" role="stat-bar" style="width: 45%;">45%</span>
-                                        </div>
-                                        <span class="name">Robot Status Rate</span>
                                         <div class="stat-3 stat-bar">
-                                            <span class="stat-bar-rating" role="stat-bar" style="width: 20%;">20%</span>
+                                            <span class="stat-bar-rating" role="stat-bar" style="width: ${workingRate}%;">50%</span>
                                         </div>
                                     </div>
                                 </div>

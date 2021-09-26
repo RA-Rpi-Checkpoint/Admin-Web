@@ -123,23 +123,23 @@
                 animation-timing-function: cubic-bezier(0.35, 0.95, 0.67, 0.99);
                 -webkit-animation-timing-function: cubic-bezier(0.35, 0.95, 0.67, 0.99);
                 -moz-animation-timing-function: cubic-bezier(0.35, 0.95, 0.67, 0.99);
-                animation-duration: 0.5s;
-                -webkit-animation-duration: 0.5s;
-                -moz-animation-duration: 0.5s;
+                animation-duration: 0s;
+                -webkit-animation-duration: 0s;
+                -moz-animation-duration: 0s;
                 animation-fill-mode: forwards;
                 -webkit-animation-fill-mode: forwards; }
 
             .stat-bar:nth-of-type(1) .stat-bar-rating {
-                animation-delay: 0.25s;
-                -webkit-animation-delay: 0.25s; }
+                animation-delay: 0s;
+                -webkit-animation-delay: 0s; }
 
             .stat-bar:nth-of-type(2) .stat-bar-rating {
-                animation-delay: 0.5s;
-                -webkit-animation-delay: 0.5s; }
+                animation-delay: 0s;
+                -webkit-animation-delay: 0s; }
 
             .stat-bar:nth-of-type(3) .stat-bar-rating {
-                animation-delay: 0.75s;
-                -webkit-animation-delay: 0.75s; }
+                animation-delay: 0s;
+                -webkit-animation-delay: 0s; }
 
             #weatherWidget .currentDesc {
                 color: #ffffff!important;
@@ -154,7 +154,7 @@
                 padding:3px;
             }
             #flotPie1 table {
-                top: 20px!;
+                top: 20px;
                 right: -10px!important;
             }
             .chart-container {
@@ -309,12 +309,13 @@
                             <h4 class="box-title">Explore Map </h4>
                             <hr style = margin-bottom:5px>
                             <div style="text-align : center;">
-                                <a href="#"><img class="map" src="../../images/map1.png" alt=""></a>
+                                <a href="#"><img class="map" src="${map}" alt=""></a>
                             </div>
                         </div>
                         <div class="card-body--">
                         </div>
-                        <hr>
+                    </div>
+                    <div class="card">
                         <div class="card-body">
                             <h4 class="box-title">Robot Status </h4>
                         </div>
@@ -377,7 +378,6 @@
                                 </table>
                             </div>
                         </div>
-
                     </div>
 
                 </div>  <!-- /.col-lg-8 -->

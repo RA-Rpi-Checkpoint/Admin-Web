@@ -46,9 +46,7 @@ Googel Fonts  */
 
 
 /* ======== Step Style ====== */
-.background {
-  background: #f1f2f7;
-}
+
 .ml-status-circle {
   position:relative;
   z-index:100;
@@ -2008,9 +2006,7 @@ header .form-inline {
   height: 285px; }
 
 .map, .vmap {
-  width: 100%;
-  height: 400px; }
-
+  width: 100%;}
 
 .btn-toolbar {
   float: left !important; }

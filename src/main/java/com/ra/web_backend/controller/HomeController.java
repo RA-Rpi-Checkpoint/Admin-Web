@@ -1,6 +1,7 @@
 package com.ra.web_backend.controller;
 
 import com.ra.web_backend.dto.ResponseDto;
+import com.ra.web_backend.entity.RoomInfo;
 import com.ra.web_backend.entity.status.RobotStatus;
 import com.ra.web_backend.entity.status.RoomStatus;
 import com.ra.web_backend.repository.RobotInfoRepository;
@@ -22,6 +23,8 @@ public class HomeController {
   @GetMapping({"", "/"})
   public String index(Model model) {
 
+    model.addAttribute("map", "../../images/map0.png");
+
     // Room table값 변경
     changeRoomInfo(1, model);
     changeRoomInfo(2, model);
@@ -40,7 +43,9 @@ public class HomeController {
   }
 
   private void changeRoomInfo(int roomNum, Model model) {
-    int humanCount = roomInfoRepository.findByRoomId(roomNum).getHumanCount();
+    RoomInfo room = roomInfoRepository.findByRoomId(roomNum);
+    int humanCount = room.getHumanCount();
+    RoomStatus status = room.getStatus();
 
     if (humanCount == 0) {
       model.addAttribute("human" + roomNum, "No one was found.");
@@ -48,9 +53,12 @@ public class HomeController {
       model.addAttribute("human" + roomNum, humanCount + " people were found in this room.");
     }
 
-    RoomStatus status = roomInfoRepository.findByRoomId(roomNum).getStatus();
+
     model.addAttribute("roomStatus" + roomNum, status);
-    if (status == RoomStatus.COMPLETE) model.addAttribute("roomStatusClass" + roomNum, "badge-complete");
+    if (status == RoomStatus.COMPLETE) {
+      model.addAttribute("roomStatusClass" + roomNum, "badge-complete");
+      model.addAttribute("map", "../../images/map"+roomNum+".png");
+    }
     else if (status == RoomStatus.WAITING) model.addAttribute("roomStatusClass" + roomNum, "badge-pause");
 
   }
